@@ -1,0 +1,19 @@
+<h2>Add a Review</h2>
+
+<div *ngIf="auth.isLoggedIn(); else elseBlock">
+    {{ form.value | json}}
+    <form [formGroup]='form'>
+        
+        <hr>
+        Review:
+        <textarea name="" id="" cols="20" rows="5" formControlName='review'></textarea>
+        Rating: <input type="range" max="5" step="0.5" formControlName="rating"> {{form.value.rating}}
+    
+    
+        <input type="submit" (click)='add_song_review()'>
+      
+    
+    </form>
+</div>
+
+<ng-template #elseBlock>Sign in to post a song!</ng-template>

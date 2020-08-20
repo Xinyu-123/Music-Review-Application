@@ -1,0 +1,18 @@
+<h2>Song Reviews</h2>
+
+<div class='reviews' *ngIf="reviews">
+    <div class='review' *ngFor="let review of reviews">
+        <div class='username'>{{ review.username }}</div>
+        
+        <star-rating [value]="review.rating" [totalstars]="5"
+          checkedcolor="goldenrod" uncheckedcolor="grey"
+          size="18" [readonly]="true">
+        </star-rating>
+        <div class="review-content">{{review.review}}</div>
+        
+    </div>
+</div>
+
+<hr>
+
+<app-song-review (song_created)='get_reviews()'></app-song-review>

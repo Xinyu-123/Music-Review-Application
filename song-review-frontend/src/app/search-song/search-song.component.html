@@ -1,0 +1,41 @@
+<h1>Search for a Song</h1>
+
+<!-- 
+{{form.value | json}} -->
+
+<form [formGroup]='form'>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Song Search..." formControlName='search'>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)='search_song()'>Search</button>
+  <br>
+  <label>Search fields:</label> 
+  <br>
+  <div *ngFor="let field of fieldsArray.controls; let i=index">
+    <!-- <input type="checkbox" [formControl]='field'>  -->
+    <mat-checkbox [formControl]='field'></mat-checkbox> {{ fields[i].display }}
+  </div>
+
+  <br>
+  <mat-slider min='0' max='5' step='0.5' value='0' (input)='change_slider($event)' formControlName='rating_range'></mat-slider> Rating Range: Greater than or equal to {{ form.value.rating_range }}
+  
+
+<div class='container' *ngIf="songs">
+  <div *ngFor ="let song of songs">
+    <div class='song' (click)='go_to_song(song._id)'>
+      <p>Name: {{ song.name }}</p>
+      <p>Artist: {{ song.artist }}</p>
+      <p *ngIf="song.date_published">Release Date: {{song.date_published.slice(0, 10)}}</p>
+      <p>Rating: {{ song.rating }}</p>
+      <p>Number of Ratings: {{ song.number_of_ratings }}</p>
+      <p>Date added: {{ song.date_uploaded.slice(0, 10) }}</p>
+      <p>Added by: {{ song.created_by_username }} </p>
+      <p *ngIf ='song.Copyright_Attribution'>Copyright Attribute: {{ song.Copyright_Attribution}} </p>
+      <img *ngIf="song.song_image" src="http://localhost:4000/{{song.song_image}}" alt="">
+    </div>
+
+  </div>
+
+</div>

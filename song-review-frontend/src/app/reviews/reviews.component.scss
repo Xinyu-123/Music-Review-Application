@@ -1,0 +1,19 @@
+.review {
+    // border: solid 1px black;
+    // height: 100px;
+    margin-left: 5px;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.username {
+    font-weight: 500;
+}
+
+.review-content {
+    margin-left: 10px;
+}
+

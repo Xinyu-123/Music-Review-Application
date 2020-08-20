@@ -1,0 +1,29 @@
+
+<div class='title'>
+  <h1>Top Songs</h1>
+</div>
+
+<div class='container' *ngIf="songs">
+  <div *ngFor ="let song of songs">
+    <div class='song' (click)='go_to_song(song._id)'>
+      <img *ngIf="song.song_image" src="http://ec2-18-224-246-12.us-east-2.compute.amazonaws.com/api/{{song.song_image}}" alt="">
+      <h4 id='name'>{{ song.name }}</h4>
+      <p>by: {{ song.artist }}</p>
+      <p *ngIf="song.date_published">Release Date: {{song.date_published.slice(0, 10)}}</p>
+      <p>Rating: {{ song.rating }}</p>
+      <p>Number of Ratings: {{ song.number_of_ratings }}</p>
+      <p>Date added: {{ song.date_uploaded.slice(0, 10) }}</p>
+      <p>Added by: {{ song.created_by_username }} </p>
+      <p *ngIf ='song.Copyright_Attribution'>Copyright Attribute: {{ song.Copyright_Attribution}} </p>
+      
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+  
+  

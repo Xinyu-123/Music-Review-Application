@@ -1,0 +1,93 @@
+
+
+li{ 
+    margin: 5px;
+
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+h1 {
+    text-align: center;
+}
+
+// .title {
+//     background-image: url('https://api.time.com/wp-content/uploads/2018/04/listening-to-music-headphones.jpg?w=600&quality=85');
+//     background-size: contain;
+//     height: 500px;
+//     text-align: center;
+    
+// }
+
+.song {
+    cursor: pointer;
+    background-color: lightblue;
+    text-align: center;
+    border: 0.1em solid;
+    &:hover{
+        transform: scale(1.085);
+        transition: transform 1s ease-in-out;
+    }
+    img {
+        margin-top: 10px;
+        height: 200px;
+        max-width: 100%;
+    }
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 0.3em;
+    column-gap: 0.3em;
+    margin: 0 1.2em 0 1.2em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto;
+        grid-row-gap: 0.3em;
+        column-gap: 0.3em;
+        margin: 0 1.2em 0 1.2em;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 751px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 0.3em;
+        column-gap: 0.3em;
+        margin: 0 1.2em 0 1.2em;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1301px){
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 0.3em;
+        column-gap: 0.3em;
+        margin: 0 1.2em 0 1.2em;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

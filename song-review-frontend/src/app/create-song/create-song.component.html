@@ -1,0 +1,52 @@
+<h2>Add a Song</h2>
+
+<div id='login-fail' *ngIf="submit">
+    {{ song_added }}
+</div>
+
+<hr>
+
+<div *ngIf="auth.isLoggedIn(); else elseBlock">
+    <!-- {{ form.value | json}} -->
+    <form [formGroup]='form'>
+        
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Song Name</mat-label>
+            <input matInput placeholder="Song Name" formControlName='name'>
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>Artist</mat-label>
+            <input matInput placeholder="Artist Name" formControlName='artist'>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Release Date</mat-label>
+            <input matInput type='date' formControlName='date_published'>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="example-full-width">
+            <mat-label>Song Image</mat-label>
+            <input matInput type='file' formControlName='image'>
+        </mat-form-field> -->
+
+        <p>Song Image: </p><input type="file" accept="image/*" formControlName='image' multiple (change)='selectImage($event)'>
+        <p>Audio File: </p><input type="file" accept="audio/*" formControlName='audio_file' multiple (change)='selectAudio($event)'>
+        
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Song Description" formControlName='description'></textarea>
+        </mat-form-field>
+    
+        <!-- <input type="submit" (click)='add_song(form.value)'> -->
+        <button mat-raised-button color="primary" (click)='add_song(form.value)'>Submit</button>
+    
+    </form>
+</div>
+
+<ng-template #elseBlock>Sign in to post a song!</ng-template>
+
+  

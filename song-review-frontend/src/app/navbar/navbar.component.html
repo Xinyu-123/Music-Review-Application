@@ -1,0 +1,28 @@
+<!-- navbar: <a routerLink='home'>Home</a>
+<a *ngIf="!auth.isLoggedIn()" routerLink='login'>Login</a>
+<a *ngIf="!auth.isLoggedIn()" routerLink='signup'>Signup</a>
+<a *ngIf="auth.isLoggedIn()" routerLink='profile'>{{auth.getUserDetails().username}}</a>
+<a *ngIf="auth.isLoggedIn() && auth.isAdmin()" routerLink='admin'>Admin</a>
+<a *ngIf="auth.isLoggedIn()" (click)='auth.logout()' routerLink=''>Logout</a> -->
+
+<div id="navigation-bar">
+    <nav>
+      <ul>
+        <li><a routerLink='home'>Home</a></li>
+        <li><a routerLink='search'>Search</a></li>
+        <li><a routerLink='home'>Top Songs</a></li>
+        
+        
+        <li><a *ngIf="auth.isLoggedIn()" routerLink='create-song'>Add a Song</a></li>
+        <li><a *ngIf="auth.isLoggedIn()" routerLink='profile'>{{auth.getUserDetails().username}}</a></li>
+        <li><a *ngIf="auth.isLoggedIn() && auth.isAdmin()" routerLink='admin'>Admin</a></li>
+
+        <li class='logout'><a *ngIf="!auth.isLoggedIn()" routerLink='login'>Login</a></li>
+        <li class='logout'><a *ngIf="!auth.isLoggedIn()" routerLink='signup'>Signup</a></li>
+        <li class='logout'><a *ngIf="auth.isLoggedIn()" (click)='auth.logout()' routerLink=''>Logout</a></li>
+        
+        <a href="#" id="menu-icon"></a>
+      </ul>
+    </nav>
+</div>
+  

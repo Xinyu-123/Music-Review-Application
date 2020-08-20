@@ -1,0 +1,10 @@
+<input type="button" value="delete all songs" (click)='delete_songs()'>
+<input type="button" value="delete all users" (click)='delete_users()'>
+
+<form [formGroup]='form'>
+    Username: <input type="text" formControlName="make_admin">
+    <input type="button" value="make a user an admin" (click)='create_admin()'>
+    <br>
+    Username: <input type="text" formControlName="remove_admin">
+    <input type="button" value="remove admin privileges from a user" (click)='remove_admin()'>
+</form>

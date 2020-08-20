@@ -1,0 +1,18 @@
+<h2>Signup</h2>
+
+
+<form [formGroup]='form' (submit)='register()'>
+    <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="username" formControlName='username'>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type='password' placeholder="password" formControlName='password'>
+    </mat-form-field>
+    <!-- Username: <input type="text" formControlName="username">
+    Password: <input type="password" formControlName="password"> -->
+
+    <button mat-raised-button color="primary">Register!</button>
+</form>
